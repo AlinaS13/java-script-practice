@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    Даны инпуты. Сделайте так, чтобы все инпуты по потери фокуса проверяли свое содержимое на правильное количество символов. Сколько символов должно быть в инпуте, указывается в атрибуте data-length. Если вбито правильное количество, то граница инпута становится зеленой, если неправильное - красной. -->
+
+    <input type="text" data-length="4" />
+    <input type="text" data-length="7" />
+    <input type="text" data-length="9" />
+    <script>
+      const inputs = document.getElementsByTagName("input");
+      for (let input of inputs) {
+        input.addEventListener("blur", func);
+      }
+      function func() {
+        const currentLength = this.dataset.length;
+        const inputDataLength = this.value.length;
+        if (currentLength == inputDataLength) {
+          this.style.borderColor = "green";
+        } else {
+          this.style.borderColor = "red";
+        }
+      }
+    </script>
+  </body>
+</html>

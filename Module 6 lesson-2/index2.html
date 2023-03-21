@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM (Document Object Model)</title>
+  </head>
+  <body>
+    <p>2</p>
+    <p>4</p>
+    <p>6</p>
+    <script>
+      const p = document.getElementsByTagName("p");
+      for (let el of p) {
+        el.addEventListener("click", func);
+      }
+      function func() {
+        this.innerHTML = this.innerHTML ** 2;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="http://ya.ru" title="">Текст первой ссылки</a>
+    <a href="http://tut.by" title="">Текст второй ссылки</a>
+    <a href="http://google.com" title="">Текст третьей ссылки</a>
+    <!-- Привяжите всем ссылкам событие - по наведению на ссылку в конец ее текста дописывается ее href в круглых скобках -->
+    <script>
+      const links = document.getElementsByTagName("a");
+      for (let index = 0; index < links.length; index++) {
+        links[index].addEventListener("mouseover", func);
+      }
+      function func() {
+        // this.innerHTML += `(${this.href})`;
+        this.innerHTML = this.innerHTML + "(" + this.href + ")";
+        this.removeEventListener("mouseover", func);
+      }
+    </script>
+  </body>
+</html>
